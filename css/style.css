@@ -19,6 +19,26 @@ ul{
     list-style-type: none;
 }
 
+
+/* INPUTS */
+.inputs{
+    text-align: center;
+}
+.inputs > *{
+    margin: 20px 10px;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.inputs input{
+    min-width: 300px;
+}
+.inputs button{
+    cursor: pointer;
+}
+
+
 /* LIST */
 .single_task{
     padding: 15px;

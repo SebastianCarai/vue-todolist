@@ -4,6 +4,7 @@ const app = new Vue(
     {
         el: '#root',
         data:{
+            newToDoTask: '',
             toDoList:[
                 {
                     text: 'Fare la spesa',
@@ -25,6 +26,17 @@ const app = new Vue(
             },
             deleteToDo: function(index){
                 this.toDoList.splice(index, 1);
+            },
+            addToDo: function(){
+                if (this.newToDoTask.trim().length>0){
+                    this.toDoList.push(
+                        {
+                            text: this.newToDoTask,
+                            done: false
+                        }
+                    );
+                    this.newToDoTask= '';
+                }
             }
         }
     }
