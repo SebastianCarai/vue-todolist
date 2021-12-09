@@ -18,11 +18,11 @@
             <h1>ToDo List</h1>
 
             <div class="inputs">
-                <input type="text" v-model="newToDoTask" placeholder="Nuova task">
+                <input type="text" v-model="newToDoTask" placeholder="Nuova task" @keyup.enter="addToDo">
                 <button @click="addToDo">Aggiungi</button>
             </div>
 
-            <div v-if="toDoList.length > 0" >
+            <div v-if="toDoList.length > 0">
                 <ul v-for="(element,index) in toDoList" class="todo_list_container">
                     <!-- Single task -->
                     <li class="single_task"> 
