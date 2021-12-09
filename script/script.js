@@ -11,10 +11,10 @@ const app = new Vue(
                 },
                 {
                     text: 'Cucinare la pasta',
-                    done: true
+                    done: false
                 },
                 {
-                    text: 'Uscire il cane',
+                    text: 'Far uscire il cane',
                     done: false
                 }
             ]
@@ -22,6 +22,9 @@ const app = new Vue(
         methods:{
             toggleDone: function(index){
                 this.toDoList[index].done = !this.toDoList[index].done;
+            },
+            deleteToDo: function(index){
+                this.toDoList.splice(index, 1);
             }
         }
     }

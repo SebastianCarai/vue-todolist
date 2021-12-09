@@ -26,6 +26,15 @@ ul{
     border-bottom: 1px solid black;
     cursor: pointer;
 }
-li.done{
+.single_task div{
+    display: inline-block;
+}
+div.done{
     text-decoration: line-through;
+}
+.single_task i{
+    float: right;
+}
+.single_task i:hover{
+    color: red;
 }

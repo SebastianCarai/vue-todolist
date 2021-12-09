@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TodoList</title>
+    <title>toDoList</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
@@ -17,9 +17,17 @@
             
             <h1>ToDo List</h1>
 
-            <ul v-for="(element,index) in toDoList" class="todo_list_container">
-                <li :class="{done: element.done}" class="single_task" @click="toggleDone(index)"> {{ element.text }} </li>
-            </ul>
+            <div v-if="toDoList.length > 0" >
+                <ul v-for="(element,index) in toDoList" class="todo_list_container">
+                    <!-- Single task -->
+                    <li class="single_task"> 
+                        <div :class="{done: element.done}" @click="toggleDone(index)">{{ element.text }} </div>
+                        <i class="fas fa-times" @click="deleteToDo(index)"></i>
+                    </li>
+                    <!-- End Single task -->
+                </ul>
+            </div>
+            <p v-else>Non hai task da fare</p>
         </div>
     </div>
     
